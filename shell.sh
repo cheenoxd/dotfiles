@@ -37,18 +37,45 @@ fi
 echo "Starting yabai window manager..."
 brew services start yabai
 
+# Install yabai config
+echo "Installing yabai config..."
+cp ./yabairc ~/.yabairc
+chmod +x ~/.yabairc
+
+# Install Powerlevel10k theme
+echo "Installing Powerlevel10k..."
+git clone --depth=1 https://github.com/romkatv/powerlevel10k.git \
+  ${ZSH_CUSTOM:-$HOME/.oh-my-zsh/custom}/themes/powerlevel10k
+
 # Install iTerm2
 echo "Installing iTerm2..."
 brew install --cask iterm2
 
-# Set up .zshrc
-echo "Linking .zshrc..."
+# Install iTerm2 profile
+echo "Installing iTerm2 profile..."
+mkdir -p "$HOME/Library/Application Support/iTerm2/DynamicProfiles"
+cp ./iterm/profile.json "$HOME/Library/Application Support/iTerm2/DynamicProfiles/dotfiles-profile.json"
+
+# Back up and set up .zshrc
+if [ -f ~/.zshrc ]; then
+  echo "Backing up existing .zshrc to .zshrc.backup"
+  cp ~/.zshrc ~/.zshrc.backup
+fi
+
+echo "Linking new .zshrc..."
 cp ./zshrc ~/.zshrc
+
+# Apply VS Code settings
+echo "Applying VS Code settings..."
+mkdir -p "$HOME/Library/Application Support/Code/User"
+cp ./vscode/settings.json "$HOME/Library/Application Support/Code/User/settings.json"
+
+# Reinstall VS Code extensions
+echo "Installing VS Code extensions..."
+xargs -n 1 code --install-extension < ./vscode/extensions.txt
 
 # Reload zsh config
 echo "Sourcing .zshrc..."
 source ~/.zshrc
-
-
 
 echo "Setup complete."

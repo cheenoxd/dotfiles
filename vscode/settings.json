@@ -1,0 +1,38 @@
+{
+    "explorer.confirmDelete": false,
+    "workbench.colorTheme": "Andromeda Bordered",
+    "workbench.iconTheme": "catppuccin-macchiato",
+    "explorer.confirmDragAndDrop": false,
+    "editor.cursorSmoothCaretAnimation": "on",
+    "editor.cursorStyle": "underline",
+    "liveServer.settings.donotShowInfoMsg": true,
+    "terminal.integrated.enableMultiLinePasteWarning": false,
+    "git.autofetch": true,
+    "workbench.layoutControl.enabled": false,
+    "git.confirmSync": false,
+    "editor.minimap.enabled": false,
+    "json.schemas": [],
+    "workbench.startupEditor": "none",
+    "nxConsole.showNodeVersionOnStartup": false,
+    "terminal.explorerKind": "both",
+    "playwright.reuseBrowser": true,
+    "playwright.showTrace": false,
+    "[typescriptreact]": {
+        "editor.defaultFormatter": "vscode.typescript-language-features"
+    },
+    "diffEditor.ignoreTrimWhitespace": false,
+    "leetcode.endpoint": "leetcode",
+    "extensions.ignoreRecommendations": true,
+    "editor.largeFileOptimizations": false,
+    "window.zoomLevel": -1,
+    "github.copilot.nextEditSuggestions.enabled": false,
+    "github.copilot.enable": {
+        "*": false,
+        "plaintext": false,
+        "markdown": false,
+        "scminput": false,
+        "javascript": false,
+        "typescriptreact": false
+    },
+    "settingsSync.ignoredExtensions": []
+}
